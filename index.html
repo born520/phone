@@ -8,14 +8,19 @@
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
         body { font-family: 'Noto Sans KR', sans-serif; text-align: center; background-color: #f0f2f5; color: #1c1e21; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
         .card { background-color: white; max-width: 400px; width: 100%; margin: auto; padding: 40px 30px; border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
-        .profile-pic { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 6px solid #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .profile-pic { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 6px solid #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         h1 { margin: 0; font-size: 2em; font-weight: 700; }
-        .title { font-size: 1.1em; color: #606770; margin: 5px 0 25px 0; }
+        .title { font-size: 1.1em; color: #606770; margin-top: 5px; }
+        .company { font-size: 1.0em; color: #8a8d91; margin: 5px 0 25px 0; }
+        .contact-info { list-style: none; padding: 0; margin: 0 0 25px 0; text-align: left; font-size: 0.95em; color: #4b4f56; }
+        .contact-info li { padding: 5px 0; display: flex; align-items: center; }
+        .contact-info li svg { width: 16px; height: 16px; margin-right: 10px; fill: #606770; }
         .save-button { display: block; text-decoration: none; background: linear-gradient(45deg, #007BFF, #0056b3); color: white; padding: 18px; border-radius: 12px; font-weight: bold; font-size: 1.2em; margin-bottom: 25px; transition: transform 0.2s, box-shadow 0.2s; }
         .save-button:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4); }
         .links-container { display: flex; flex-direction: column; gap: 15px; }
         .link-button { display: block; text-decoration: none; background-color: #e4e6eb; color: #050505; padding: 15px; border-radius: 10px; font-weight: bold; transition: background-color 0.2s; }
         .link-button:hover { background-color: #d8dbdf; }
+        hr { border: none; height: 1px; background-color: #e4e6eb; margin: 25px 0; }
     </style>
 </head>
 <body>
@@ -23,8 +28,20 @@
         <img src="https://i.postimg.cc/6qd3rg42/200k.jpg" alt="프로필 사진" class="profile-pic">
         <h1>류용길</h1>
         <p class="title">부산지사장</p>
+        <p class="company">에어텔닷컴</p>
+        
+        <ul class="contact-info">
+            <li><svg viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>010-5517-0995</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/></svg>born520@gmail.com</li>
+        </ul>
+
         <a href="./contact.vcf" class="save-button">📥 연락처 저장하기</a>
-        <div class="links-container"><a href="https://airteltour.com/" target="_blank" class="link-button">Website</a><a href="" target="_blank" class="link-button">Github</a><a href="" target="_blank" class="link-button">Instagram</a></div>
+        
+        <hr>
+
+        <div class="links-container">
+            <a href="https://airteltour.com/" target="_blank" class="link-button">회사 홈페이지</a>
+        </div>
     </div>
 </body>
 </html>
