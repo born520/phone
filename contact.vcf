@@ -6,5 +6,5 @@ ORG;CHARSET=UTF-8:에어텔닷컴
 TITLE;CHARSET=UTF-8:부산지사장
 TEL;TYPE=CELL:010-5517-0995
 EMAIL:born520@gmail.com
-URL:https://airteltour.com/
+ADR;TYPE=WORK;CHARSET=UTF-8:;;부산시 중구 중앙대로 40  노블리안2 203호
 END:VCARD
