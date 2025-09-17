@@ -1,1 +1,30 @@
-
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>류용길님의 디지털명함</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+        body { font-family: 'Noto Sans KR', sans-serif; text-align: center; background-color: #f0f2f5; color: #1c1e21; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .card { background-color: white; max-width: 400px; width: 100%; margin: auto; padding: 40px 30px; border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+        .profile-pic { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 6px solid #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { margin: 0; font-size: 2em; font-weight: 700; }
+        .title { font-size: 1.1em; color: #606770; margin: 5px 0 25px 0; }
+        .save-button { display: block; text-decoration: none; background: linear-gradient(45deg, #007BFF, #0056b3); color: white; padding: 18px; border-radius: 12px; font-weight: bold; font-size: 1.2em; margin-bottom: 25px; transition: transform 0.2s, box-shadow 0.2s; }
+        .save-button:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4); }
+        .links-container { display: flex; flex-direction: column; gap: 15px; }
+        .link-button { display: block; text-decoration: none; background-color: #e4e6eb; color: #050505; padding: 15px; border-radius: 10px; font-weight: bold; transition: background-color 0.2s; }
+        .link-button:hover { background-color: #d8dbdf; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="https://i.postimg.cc/6qd3rg42/200k.jpg" alt="프로필 사진" class="profile-pic">
+        <h1>류용길</h1>
+        <p class="title">부산지사장</p>
+        <a href="./contact.vcf" class="save-button">📥 연락처 저장하기</a>
+        <div class="links-container"><a href="https://airteltour.com/" target="_blank" class="link-button">Website</a><a href="" target="_blank" class="link-button">Github</a><a href="" target="_blank" class="link-button">Instagram</a></div>
+    </div>
+</body>
+</html>
