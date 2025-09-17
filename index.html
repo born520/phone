@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>류용길님의 디지털명함</title>
     <meta property="og:title" content="반갑습니다. 류용길입니다.">
-    <meta property="og:description" content="제 연락처를 바로 저장할 수 있는 프로필페이지입니다.">
+    <meta property="og:description" content="제 연락처를 사용하시는 스마트폰에서 바로 저장할 수 있는 프로필 페이지입니다.">
     <meta property="og:image" content="https://i.postimg.cc/qB2cMXNZ/image.jpg">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
@@ -178,48 +178,32 @@
         <p style="font-size:1.1em;color:#606770;margin-top:5px;">부산지사장</p>
         
         <hr>
-        <ul class="info-list">
-            <li>
-                <span class="label">이름</span>
-                <span class="value" id="copy-name">류용길</span>
-                <span class="tooltip">
-                    <svg class="copy-icon" data-clipboard-target="#copy-name" viewBox="0 0 24 24">
-                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-                    </svg>
-                    <span class="tooltiptext">복사됨!</span>
-                </span>
-            </li>
-            <li>
-                <span class="label">회사</span>
-                <span class="value" id="copy-company">에어텔닷컴</span>
-                <span class="tooltip">
-                    <svg class="copy-icon" data-clipboard-target="#copy-company" viewBox="0 0 24 24">
-                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-                    </svg>
-                    <span class="tooltiptext">복사됨!</span>
-                </span>
-            </li>
-            <li>
-                <span class="label">연락처</span>
-                <a href="tel:010-5517-0995" class="value" id="copy-phone">010-5517-0995</a>
-                <span class="tooltip">
-                    <svg class="copy-icon" data-clipboard-target="#copy-phone" viewBox="0 0 24 24">
-                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-                    </svg>
-                    <span class="tooltiptext">복사됨!</span>
-                </span>
-            </li>
-            <li>
-                <span class="label">이메일</span>
-                <a href="mailto:born520@gmail.com" class="value" id="copy-email">born520@gmail.com</a>
-                <span class="tooltip">
-                    <svg class="copy-icon" data-clipboard-target="#copy-email" viewBox="0 0 24 24">
-                        <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
-                    </svg>
-                    <span class="tooltiptext">복사됨!</span>
-                </span>
-            </li>
-        </ul>
+        <table class="info-table">
+            <tr>
+                <td class="info-label">이름</td>
+                <td class="info-value" id="copy-name">류용길</td>
+                <td><button class="copy-btn" onclick="copyText('copy-name', this)">복사</button></td>
+            </tr>
+            <tr>
+                <td class="info-label">회사</td>
+                <td class="info-value" id="copy-company">에어텔닷컴</td>
+                <td><button class="copy-btn" onclick="copyText('copy-company', this)">복사</button></td>
+            </tr>
+            <tr>
+                <td class="info-label">연락처</td>
+                <td class="info-value">
+                    <a href="tel:010-5517-0995" id="copy-phone">010-5517-0995</a>
+                </td>
+                <td><button class="copy-btn" onclick="copyText('copy-phone', this)">복사</button></td>
+            </tr>
+            <tr>
+                <td class="info-label">이메일</td>
+                <td class="info-value">
+                    <a href="mailto:born520@gmail.com" id="copy-email">born520@gmail.com</a>
+                </td>
+                <td><button class="copy-btn" onclick="copyText('copy-email', this)">복사</button></td>
+            </tr>
+        </table>
         <div class="button-group">
             <a href="./contact.vcf" class="action-button vcf">연락처 파일로 저장</a>
             <a href="./profile.png" download="profile.png" class="action-button image">이미지로 저장</a>
@@ -228,22 +212,36 @@
         <div class="links-container"><a href="https://airteltour.com/" target="_blank" class="link-button">에어텔닷컴</a></div>
     </div>
     <script>
-        document.querySelectorAll('.copy-icon').forEach(icon => {
-            icon.addEventListener('click', () => {
-                const target = document.querySelector(icon.dataset.clipboardTarget);
-                const tooltip = icon.closest('.tooltip');
-                if (navigator.clipboard) {
-                    navigator.clipboard.writeText(target.innerText.trim()).then(() => {
-                        tooltip.classList.add('tooltip-visible');
-                        setTimeout(() => {
-                            tooltip.classList.remove('tooltip-visible');
-                        }, 1500);
-                    }).catch(err => {
-                        console.error('복사 실패:', err);
-                    });
-                }
-            });
-        });
+        function copyText(elementId, button) {
+            const element = document.getElementById(elementId);
+            const text = element.innerText.trim();
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    // 복사 성공 피드백
+                    const originalText = button.innerText;
+                    button.innerText = '완료!';
+                    button.classList.add('copied');
+                    
+                    setTimeout(() => {
+                        button.innerText = originalText;
+                        button.classList.remove('copied');
+                    }, 1500);
+                }).catch(err => {
+                    console.error('복사 실패:', err);
+                    button.innerText = '실패';
+                    setTimeout(() => {
+                        button.innerText = '복사';
+                    }, 1500);
+                });
+            } else {
+                // 클립보드 API를 지원하지 않는 경우
+                button.innerText = '지원안함';
+                setTimeout(() => {
+                    button.innerText = '복사';
+                }, 1500);
+            }
+        }
     </script>
 </body>
 </html>
